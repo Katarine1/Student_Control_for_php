@@ -1,6 +1,5 @@
 <h1>App Student Control</h1>
-<h2>PHP and MySQL</h2>
-<h2>Framework Composer</h2>
+<h2>PHP and MySQL and Framework Composer</h2>
 <br/>
 
 <h4>Application with MySQL database and Composer framework.</h4>
