@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Student Control</title>
+		<link rel="stylesheet" type="text/css" href="css/style_index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style_register.css"/>
+	</head>
+	<body>
+		
+		<!-- header -->	
+
+		<header id="header">
+			<section id="title">
+				<a href="/">
+					<h2>Student Control</h2>
+				</a>
+			</section>			
+		</header>
+
+		<!-- fim header -->
+
+		<!-- register -->
+
+		<section id="register">
+			<form method="post" action="/register_login">
+				<h2>Register</h2>
+				<input type="text" name="name" placeholder="Name"
+					value="<?= $this->view->student['name'] ?>" />
+				<input type="email" name="email" placeholder="E-mail"
+					value="<?= $this->view->student['email'] ?>" />
+				<input type="password" name="password" placeholder="Password"
+					value="<?= $this->view->student['password'] ?>" />
+				<input id="btn" type="submit" value="SAVE"/>
+			<?php  if($this->view->errorRegister) { ?>
+				<h4>Error saving data, check if all fields are filled</h4>
+			<?php } ?>
+			</form>
+		</section>
+		
+		<!-- fim register -->
+
+	</body>
+</html>

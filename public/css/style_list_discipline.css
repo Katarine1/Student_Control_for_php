@@ -1,0 +1,116 @@
+/* list_discipline */
+
+#list_discipline {
+	width: 100%;
+	height: auto;
+	max-height: 100%;
+	padding: 30px 0;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	align-items: flex-start;	
+}
+
+/* disciplines, testjob */
+
+#list_discipline #disciplines,
+#list_discipline #testjobs {
+	width: 50%;
+	height: auto;
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: 0 30px;
+}
+
+/* h2 */
+
+h2 {
+	margin: 10px 0 20px 0;
+}
+
+/* table */
+
+table {
+	width: 100%;
+	text-align: left;
+	font-weight: 700;
+	padding: 10px;
+	margin: 0 auto;
+	overflow-x: auto;
+}
+
+/* th */
+
+table th {
+	border: 1px solid #cc08;
+	background-color: #cc08;
+	padding: 5px;		
+}
+
+/* td */
+
+table td {
+	height: 40px;
+	padding: 5px;
+	border: 1px solid #cc08;	
+}
+
+/* div link_del */
+
+table td .link_del {
+	padding: 5px;
+	background-color: #cc08;
+}
+
+/* td a */
+
+table td a, table td a:link,
+table td a:visited, table td a:active {
+	text-decoration: none;
+	color: #000;
+}
+
+/* td */
+
+table .num {
+	text-align: center;
+	border:0;	
+}
+
+table .num2 {
+	text-align: center;
+	border: 1px solid #cc08;
+
+}
+
+table .link {
+	text-align: center;
+	font-weight: 900;
+	padding: 5px;
+	border:0;				
+}
+
+/* max width 768px */
+
+@media(max-width: 768px) {
+
+	#list_discipline {
+		width: 100%;
+		flex-direction: column;	
+	}
+
+	#list_discipline #disciplines,
+	#list_discipline #testjobs {
+		width: 95%;
+		overflow-x: auto;
+		align-items: flex-start;
+	}
+
+	table {
+		font-size: 0.75em;
+		overflow-x: auto;
+	}
+}

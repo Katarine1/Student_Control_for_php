@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Student Control</title>
+		<link rel="stylesheet" type="text/css" href="css/style_index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style_discipline.css"/>
+	</head>
+	<body>
+		
+		<!-- header -->	
+
+		<header id="header">
+			<section id="title">
+				<a href="/">
+					<h2>Student Control</h2>
+				</a>
+			</section>
+			<section id="menu">
+				<ul>
+					<li><a href="/testjob">Test and Job</a></li>
+					<li><a href="/list_disciplines">My Disciplines</a></li>
+					<li><a href="/exit">Exit</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<!-- fim header -->
+
+		<!-- discipline -->
+
+		<section id="discipline">
+			<form method="post" action="/register_discipline">
+				<h2>Register Disciplines</h2>
+				<input type="text" name="name" placeholder="Discipline" 
+					value="<?= $this->view->discipline['name'] ?>" />
+				<input type="text" name="teacher" placeholder="Teacher" 
+					value="<?= $this->view->discipline['teacher'] ?>" />
+				<input type="text" name="hour" placeholder="00:00" 
+					value="<?= $this->view->discipline['hour'] ?>" />				
+				<input id="btn" type="submit" value="SAVE"/>
+			<?php if($this->view->saveDiscipline == 'error') { ?>
+				<h4>Error saving data, check if all fields are filled</h4>
+			<?php } ?>
+			</form>
+		</section>
+		
+		<!-- fim discipline -->
+
+	</body>
+</html>

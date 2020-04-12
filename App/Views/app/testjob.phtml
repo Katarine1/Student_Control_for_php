@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Student Control</title>
+		<link rel="stylesheet" type="text/css" href="css/style_index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style_testjob.css"/>
+		<script src="js/jquery.js"></script>
+		<script src="js/copy.js"></script>
+	</head>
+	<body>
+		
+		<!-- header -->	
+
+		<header id="header">
+			<section id="title">
+				<a href="/">
+					<h2>Student Control</h2>
+				</a>
+			</section>
+			<section id="menu">
+				<ul>
+					<li><a href="/discipline">Discipline</a></li>
+					<li><a href="/list_disciplines">My Disciplines</a></li>
+					<li><a href="/exit">Exit</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<!-- fim header -->
+
+		<!-- discipline -->
+
+		<section id="testjob">
+			<form method="post" action="/register_testjob">
+				<h2>Register Tests and Jobs</h2>
+				<input type="date" name="dateEvent"
+						value="<?= $this->view->testJobs['dateEvent']; ?>" />
+				<select id="id_disciplines" name="id_dis">
+					<option>Select Disciplines...</option>
+					<?php 
+						foreach($this->view->disciplines as $id => $dis) {
+							if($_SESSION['id'] == $dis['id_login']) {  ?>							
+							<option value="<?= $dis['id_dis']; ?>">
+								<?= $dis['name']; ?>									
+							</option>							
+					<?php }} ?>	
+				</select>
+				<input id="id_disc" value="" type="hidden" name="id_discipline"/>
+				<textarea name="content" placeholder="Content..."
+					value="<?= $this->view->testJobs['content']; ?>" ></textarea>
+				<input type="text" name="note" placeholder="0.00"
+					value="<?= $this->view->testJobs['note']; ?>" />				
+				<input id="btn" type="submit" value="SAVE"/>
+				<?php  if($this->view->saveTestJob == 'error') { ?>
+					<h4>Error saving data, check if all fields are filled</h4>
+				<?php } ?>
+			</form>
+		</section>
+		
+		<!-- fim discipline -->
+
+	</body>
+</html>

@@ -1,0 +1,17 @@
+{
+	"name": "student_control",
+	"require": {
+		"php": ">=7.0"
+	},
+	"authors": [
+		{
+			"name": "Katarine Albuquerque"
+		}
+	],
+	"autoload": {
+		"prs-4": {
+			"App\\": "App/",
+			"MF\\": "vendor/MF/"
+		}
+	}
+}

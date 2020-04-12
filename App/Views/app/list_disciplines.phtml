@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Student Control</title>
+		<link rel="stylesheet" type="text/css" href="css/style_index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style_list_discipline.css"/>		
+	</head>
+	<body>
+		
+		<!-- header -->	
+
+		<header id="header">
+			<section id="title">
+				<a href="/">
+					<h2>Student Control</h2>
+				</a>
+			</section>
+			<section id="menu">
+				<ul>
+					<li><a href="/list_disciplines">My Disciplines</a></li>
+					<li><a href="/testjob">Test and Job</a></li>
+					<li><a href="/discipline">Discipline</a></li>
+					<li><a href="/exit">Exit</a></li>
+				</ul>
+			</section>
+		</header>
+
+		<!-- fim header -->
+
+		<!-- list_discipline -->
+
+		<section id="list_discipline">
+			<section id="disciplines">
+				<h2>Disciplines</h2>
+				<table>
+					<tr>
+						<th class="num2">HOUR</th>
+						<th>DISCIPLINE</th>
+						<th>NAME</th>
+						<th>TEACHER</th>
+						<th class="link"></th>
+					</tr>
+					<?php						
+					foreach($this->view->disciplines as $id => $discipline) {
+						if($_SESSION['id'] == $discipline['id_login']) { ?>
+						<tr>
+							<td class="num2"><?= $discipline['hour'] ?></td>
+							<td class="num2"><?= $discipline['id_dis'] ?></td>
+							<td><?= $discipline['name'] ?></td>						
+							<td><?= $discipline['teacher'] ?></td>
+														
+							<td class="num" id="link_disc">
+								<div class="link_del">
+									<a id="link_d" href="/delete_discipline?id_dis=<?= $discipline['id_dis'] ?>"> 
+										DELETE
+									</a>
+								</div>
+							</td>											
+						</tr>
+					<?php } }?>									
+				</table>
+			</section>	
+			<section id="testjobs">
+				<h2>Tests and Jobs</h2>
+				<table>
+					<tr>
+						<th class="num2">DATE EVENT</th>
+						<th>DISCIPLINE</th>
+						<th>CONTENT</th>
+						<th>NOTE</th>
+						<th class="link"></th>
+					</tr>
+					<?php	
+					foreach($this->view->testJobs as $id => $testjob) {
+						if($_SESSION['id'] == $testjob['id_login']) {
+							 ?>
+						<tr>
+							<td class="num2"><?= $testjob['dateEvent'] ?></td>
+							<td class="num2"><?= $testjob['id_discipline'] ?></td>
+							<td><?= $testjob['content'] ?></td>						
+							<td class="num2"><?= $testjob['note'] ?></td>
+														
+							<td class="num" id="link_disc">
+								<div class="link_del">
+									<a href="/delete_testjob?id_test=<?= $testjob['id_test'] ?>"> 
+										DELETE
+									</a>
+								</div>
+							</td>												
+						</tr>
+					<?php }} ?>
+			</section>
+		</section>
+		
+		<!-- fim list_discipline -->
+	</body>
+</html>
